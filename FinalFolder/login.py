@@ -38,7 +38,7 @@ class Login(QtWidgets.QWidget):
         else:
             username = self.txt_username.text()
             password = self.txt_password.text()
-            conn = sqlite3.connect('../Data.db')
+            conn = sqlite3.connect('D:\PyTon\Pycharm\JSProject\check\FinalFolder\FinalFolder\Data.db')
             cursor = conn.cursor()
             cursor.execute("SELECT username,password FROM credentials")
             val = cursor.fetchall()
@@ -96,7 +96,7 @@ class NewUser(QtWidgets.QWidget):
         self.btn_submit.clicked.connect(self.btn_submit_handler)
 
     def create_csv_file(self, username):
-        conn = sqlite3.connect('Data.db')
+        conn = sqlite3.connect('D:\PyTon\Pycharm\JSProject\check\FinalFolder\FinalFolder\Data.db')
         cursor = conn.cursor()
 
         # Выполнение запроса для получения данных пользователя
@@ -149,7 +149,7 @@ class NewUser(QtWidgets.QWidget):
                 txt_firstname_v and txt_lastname_v and txt_phone_v and txt_emailid_v and txt_username_v and txt_password_v):
             self.pop_message(text="Please Enter All Fields")
         else:
-            conn = sqlite3.connect('Data.db')
+            conn = sqlite3.connect('D:\PyTon\Pycharm\JSProject\check\FinalFolder\FinalFolder\Data.db')
             cursor = conn.cursor()
 
             cursor.execute("""
