@@ -38,7 +38,7 @@ class Login(QtWidgets.QWidget):
         else:
             username = self.txt_username.text()
             password = self.txt_password.text()
-            conn = sqlite3.connect('/check/FinalFolder/FinalFolder1\Data.db')
+            conn = sqlite3.connect('.\Data.db')
             cursor = conn.cursor()
             cursor.execute("SELECT username,password FROM credentials")
             val = cursor.fetchall()
@@ -96,7 +96,7 @@ class NewUser(QtWidgets.QWidget):
         self.btn_submit.clicked.connect(self.btn_submit_handler)
 
     def create_csv_file(self, username):
-        conn = sqlite3.connect('/check/FinalFolder/FinalFolder1\Data.db')
+        conn = sqlite3.connect('.\Data.db')
         cursor = conn.cursor()
 
         # Выполнение запроса для получения данных пользователя
